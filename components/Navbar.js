@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { useTheme } from "next-themes";
-import { useRouter } from "next/router";
-import userData from "@constants/data";
+import React, { useEffect, useState } from "react"
+import Link from "next/link"
+import { useTheme } from "next-themes"
+import { useRouter } from "next/router"
+import userData from "@constants/data"
 
 export default function Navbar() {
-  const router = useRouter();
-  console.log(router.asPath);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const router = useRouter()
+  console.log(router.asPath)
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
   return (
     <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
@@ -235,5 +235,5 @@ export default function Navbar() {
         </Link>
       </div>
     </div>
-  );
+  )
 }

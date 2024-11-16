@@ -1,35 +1,31 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import ContainerBlock from "../components/ContainerBlock";
-import FavouriteProjects from "../components/FavouriteProjects";
-import LatestCode from "../components/LatestCode";
-import Hero from "../components/Hero";
-import getLatestRepos from "@lib/getLatestRepos";
-import userData from "@constants/data";
+import { promises as fs } from "fs"
+import bibtexParse from "@orcid/bibtex-parse-js"
 
-export default function Home({ repositories }) {
+import styles from "../styles/Home.module.css"
+import ContainerBlock from "../components/mine/ContainerBlock"
+import Hero from "../components/mine/Hero"
+import SelectedPublications from "../components/mine/SelectedPublications"
+
+export default function Home({ pubs }) {
   return (
-    <ContainerBlock
-      title="Manu Arora - Developer, Writer, Creator"
-      description="This is a template built specifically for my blog - Creating a developer portfolio that gets you a job."
-    >
+    <ContainerBlock>
       <Hero />
-      <FavouriteProjects />
-      <LatestCode repositories={repositories} />
+      <SelectedPublications pubs={pubs} />
     </ContainerBlock>
-  );
+  )
 }
 
-export const getServerSideProps = async () => {
-  console.log(process.env.GITHUB_AUTH_TOKEN);
-  let token = process.env.GITHUB_AUTH_TOKEN;
+export const getStaticProps = async () => {
+  const bibFile = await fs.readFile(
+    process.cwd() + "/public/publications.bib",
+    "utf8"
+  )
 
-  const repositories = await getLatestRepos(userData, token);
-  // console.log("REPOSITORIES", repositories);
+  const pubs = bibtexParse.toJSON(bibFile)
 
   return {
     props: {
-      repositories,
+      pubs,
     },
-  };
-};
+  }
+}
