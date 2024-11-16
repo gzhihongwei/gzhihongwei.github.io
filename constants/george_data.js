@@ -1,10 +1,13 @@
 const userData = {
+  domain: "gzhihongwei.github.io",
   names: ["George Z. Wei", "George Z Wei", "George Zhihong Wei", "George Wei"],
   chineseName: "魏治鸿",
-  designation: "MSR Student @ CMU",
+  position: "MSR Student @ CMU",
   pfp: "/images/cardigan_square.jpg",
   email: "gzw@cs.cmu.edu",
   encodedEmail: "gzw [at] cs [dot] cmu [dot] edu",
+  shortDescription:
+    "MSR Student @ CMU advised by Prof. László Jeni working on multimodal benchmarking and 3D/4D reconstruction.",
   description: [
     <>
       I'm a 1st year{" "}

@@ -23,7 +23,7 @@ export default function Navbar() {
               {userData.names[0]}
             </h1>
             <p className="text-base font-light text-gray-500 dark:text-gray-300">
-              {userData.designation}
+              {userData.position}
             </p>
           </Link>
         </div>
