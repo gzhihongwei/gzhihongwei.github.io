@@ -26,7 +26,8 @@ const userData = {
       >
         László Jeni
       </a>{" "}
-      working on multimodal benchmarking and 3D reconstruction and synthesis.
+      working on multimodal benchmarking and 3D/4D reconstruction and dynamic
+      scene generation.
     </>,
     <>
       Previously, I was an AI Resident at Meta in FAIR advised by Dr.{" "}
@@ -102,7 +103,7 @@ const userData = {
       on facial detection/recognition bias and robustness.
     </>,
   ],
-  cv: "/George_Wei.CV.pdf",
+  cv: "/files/George_Wei.CV.pdf",
   socialLinks: {
     semanticScholar:
       "https://www.semanticscholar.org/author/George-Z.-Wei/2150469687",

@@ -80,9 +80,9 @@ export default function Navbar() {
             )}
           </Link>
           <Link
-            href="/George_Wei.CV.pdf"
+            href={userData.cv}
             className={`text-base  ${
-              router.asPath === "/George_Wei.CV.pdf"
+              router.asPath === userData.cv
                 ? "text-gray-800 font-bold dark:text-gray-400"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
