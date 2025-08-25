@@ -17,19 +17,6 @@ export default function Hero() {
             {desc}
           </p>
         ))}
-
-        <h1 className="text-center text-3xl xl:text-4xl font-bold text-gray-700 dark:text-gray-200 my-2">
-          News
-        </h1>
-        <div className="bg-[#F1F1F1] bg-opacity-75 dark:bg-gray-900 border-2 rounded-md overflow-y-scroll h-56">
-          <ul className="ml-2 list-disc list-outside ml-5">
-            {userData.news.map((val, idx) => (
-              <li key={idx}>
-                <strong>{val[0]}:</strong> {val[1]}
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
       {/* Image container */}
       <div className="order-1 xl:order-2 col-span-2 xl:col-span-1 flex items-center max-w-xl mx-auto">
@@ -43,6 +30,22 @@ export default function Hero() {
           <p className="mt-10 px-10 xl:px-0">
             <code>Email: {userData.encodedEmail}</code>
           </p>
+        </div>
+      </div>
+
+      {/* News contained */}
+      <div className="order-3 col-span-2 xl:col-span-1 px-10 xl:px-0">
+        <h1 className="text-center text-3xl xl:text-4xl font-bold text-gray-700 dark:text-gray-200 my-2">
+          News
+        </h1>
+        <div className="bg-[#F1F1F1] bg-opacity-75 dark:bg-gray-900 border-2 rounded-md overflow-y-scroll h-56">
+          <ul className="ml-2 list-disc list-outside ml-5">
+            {userData.news.map((val, idx) => (
+              <li key={idx}>
+                <strong>{val[0]}:</strong> {val[1]}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
