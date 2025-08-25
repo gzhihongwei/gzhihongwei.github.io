@@ -2,8 +2,8 @@ import React from "react"
 import { promises as fs } from "fs"
 import bibtexParse from "@orcid/bibtex-parse-js"
 
-import ContainerBlock from "../components/mine/ContainerBlock"
-import Publications from "../components/mine/Publications"
+import ContainerBlock from "../components/ContainerBlock"
+import Publications from "../components/Publications"
 
 export default function Research({ pubs }) {
   return (

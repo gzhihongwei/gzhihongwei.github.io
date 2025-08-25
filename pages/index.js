@@ -1,10 +1,9 @@
 import { promises as fs } from "fs"
 import bibtexParse from "@orcid/bibtex-parse-js"
 
-import styles from "../styles/Home.module.css"
-import ContainerBlock from "../components/mine/ContainerBlock"
-import Hero from "../components/mine/Hero"
-import SelectedPublications from "../components/mine/SelectedPublications"
+import ContainerBlock from "../components/ContainerBlock"
+import Hero from "../components/Hero"
+import SelectedPublications from "../components/SelectedPublications"
 
 export default function Home({ pubs }) {
   return (

@@ -1,0 +1,53 @@
+{
+  "domain": "gzhihongwei.github.io",
+  "names": [
+    "George Z. Wei",
+    "George Z Wei",
+    "George Zhihong Wei",
+    "George Wei"
+  ],
+  "chineseName": "魏治鸿",
+  "position": "MSR Student @ CMU",
+  "pfp": "/images/cardigan_square.jpg",
+  "email": "gzw@andrew.cmu.edu",
+  "shortDescription": "MSR Student @ CMU advised by Prof. László Jeni working on 3D/4D reconstruction and multimodal benchmarking.",
+  "cv": "/files/George_Wei.CV.pdf",
+  "socialLinks": {
+    "semanticScholar": "https://www.semanticscholar.org/author/George-Z.-Wei/2150469687",
+    "googleScholar": "https://scholar.google.com/citations?user=2b0c1JYAAAAJ&hl=en",
+    "x": "https://x.com/gzhihongwei",
+    "linkedin": "https://www.linkedin.com/in/gzhihongwei/",
+    "github": "https://github.com/gzhihongwei"
+  },
+  "news": [
+    [
+      "Aug 2025",
+      "Wrapped up my internship at Adobe Research! Learned a lot about 3D graphics and research engineering."
+    ],
+    ["May 2025", "I started my internship at Adobe Research in San Francisco."],
+    ["Aug 2024", "I started my MSR at CMU!"],
+    [
+      "Jul 2024",
+      "I wrapped my AI Residency at Meta! I've learned a lot in my 2 years!"
+    ],
+    ["Mar 2023", "My AI Residency at Meta got extended!"],
+    [
+      "Nov 2022",
+      "Attending NeurIPS 2022 to present \"Robustness Disparities in Face Detection\"!"
+    ],
+    ["Aug 2022", "I was invited to review for DSTC 11!"],
+    [
+      "Jun 2022",
+      "I was invited to review for the NeurIPS Datasets & Benchmark Track!"
+    ],
+    ["May 2022", "I graduated from UMass Amherst!"],
+    ["Dec 2021", "I defended my Honors Thesis!"],
+    ["Sep 2021", "I started working on the Alexa Prize Taskbot Challenge."],
+    ["May 2021", "I'll be attending REU CAAR virtually."]
+  ],
+  "selectedPubs": [
+      "xie2025maverix",
+      "dooley2022robustness",
+      "dooley2021comparing"
+  ]
+}

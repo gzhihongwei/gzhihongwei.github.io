@@ -15,21 +15,21 @@ export default function Navbar() {
   }, [])
 
   return (
-    <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
-      <div className="flex  md:flex-row justify-between items-center">
+    <div className="max-w-6xl mx-auto px-4 py-10">
+      <div className="flex md:flex-row justify-between items-center">
         <div className="flex flex-col">
           <Link href="/">
             <h1 className="font-semibold text-xl dark:text-gray-100">
-              {userData.name}
+              {userData.names[0]}
             </h1>
             <p className="text-base font-light text-gray-500 dark:text-gray-300">
-              {userData.designation}
+              {userData.position}
             </p>
           </Link>
         </div>
 
         <div className="space-x-8 hidden md:block">
-          <Link
+          {/* <Link
             href="/about"
             className={`text-base  ${
               router.asPath === "/about"
@@ -53,17 +53,17 @@ export default function Navbar() {
                 />
               </svg>
             )}
-          </Link>
+          </Link> */}
           <Link
-            href="/projects"
+            href="/research"
             className={`text-base  ${
-              router.asPath === "/projects"
+              router.asPath === "/research"
                 ? "text-gray-800 font-bold dark:text-gray-400"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
-            Projects
-            {router.asPath === "/projects" && (
+            Research
+            {router.asPath === "/research" && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -80,72 +80,53 @@ export default function Navbar() {
             )}
           </Link>
           <Link
-            href="/experience"
+            href={userData.cv}
             className={`text-base  ${
-              router.asPath === "/experience"
+              router.asPath === userData.cv
                 ? "text-gray-800 font-bold dark:text-gray-400"
                 : "text-gray-600 dark:text-gray-300 font-normal "
             }`}
           >
-            Experience{" "}
-            {router.asPath === "/experience" && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-down inline-block h-3 w-3"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                />
-              </svg>
-            )}
-          </Link>
-          <Link
-            href="/contact"
-            className={`text-base  ${
-              router.asPath === "/contact"
-                ? "text-gray-800 font-bold dark:text-gray-400"
-                : "text-gray-600 dark:text-gray-300 font-normal "
-            }`}
-          >
-            Contact
-            {router.asPath === "/contact" && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-arrow-down inline-block h-3 w-3"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                />
-              </svg>
-            )}
+            CV
           </Link>
         </div>
 
         <div className="space-x-4 flex flex-row items-center">
-          <a href={userData.socialLinks.instagram} x>
+          <a
+            href={userData.socialLinks.semanticScholar}
+            className="text-base font-normal text-gray-600 dark:text-gray-300"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
               width="16"
               height="16"
-              fill="currentColor"
-              className="bi bi-instagram h-5 w-5"
-              viewBox="0 0 16 16"
+              className="bi bi-semantic-scholar h-5 w-5"
+              viewBox="0 0 512 512"
             >
-              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+              <path
+                d="m379.0868 75.20191c18.16812 40.68422 25.53302 83.89034 32.42143 127.20955-1.26557.35902-2.52865.72116-3.79427 1.08267-.9109-2.53364-1.98432-5.02156-2.70735-7.60959-5.21805-18.65384-10.47938-37.29655-15.47376-56.01156-1.79641-6.7327-6.03443-10.08392-12.09539-13.38137-8.90177-4.84112-17.31343-11.08316-24.69005-18.04576-4.70771-4.44068-8.73494-7.14859-15.41325-7.07815-44.46061.47028-88.92553.51538-133.38426.92448-2.96314.0295-6.63075 1.12345-8.72809 3.06448-8.08853 7.48476-15.67094 15.51457-25.64177 25.55586 26.29927 64.04074 39.52245 133.8403 33.84523 208.04469-12.62623-8.0842-22.40117-14.47949-22.98144-31.41848-2.90381-84.66094-29.02018-161.22472-83.580741-227.107617-1.227261-1.482494-1.837205-3.476039-2.736967-5.229823h284.960678zm-330.356845 32.64514c12.662672 0 25.33214-.20085 37.983708.17178 2.510789.0723 6.022658 1.66788 7.277148 3.67935 37.836649 60.79088 67.333839 124.63574 71.155359 197.68268.0178.28921-.2826.59448-1.36262 2.71657-22.61129-77.29358-63.40364-142.73587-115.871175-201.39106.273676-.95167.544426-1.90519.818185-2.85871zm-40.7293523 53.1819c18.0890173-.65752 33.3891773-1.3175 48.6911883-1.60238 1.541204-.0295 3.360468 2.009 4.650795 3.4439 29.847587 33.20131 56.935394 68.2806 73.632114 110.23473 3.17758 7.97976 5.35158 16.35996 7.98907 24.55477-34.58434-54.42464-82.710674-95.12245-134.9637713-136.63164zm194.4736173 275.76916c-31.48153-50.06559-61.80372-98.28894-92.12778-146.5123.37077-.47706.74155-.95165 1.11169-1.42811 2.54233 2.04731 56.62149 45.41225 80.9093 65.30201 6.76608 5.54129 11.87848 5.44178 18.91585-.27375 82.58396-67.08545 174.73706-117.86224 272.58287-158.80848 5.22305-2.18511 10.64009-3.91664 15.98238-5.81688 1.18651-.42022 2.44093-.65319 4.15147-.22122-113.62299 65.98672-222.02236 138.23835-301.52641 247.75933z"
+                strokeWidth=".086816"
+              />
             </svg>
           </a>
           <a
-            href={userData.socialLinks.twitter}
+            href={userData.socialLinks.googleScholar}
+            className="text-base font-normal text-gray-600 dark:text-gray-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              width="16"
+              height="16"
+              className="bi bi-google-scholar h-5 w-5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+            </svg>
+          </a>
+          <a
+            href={userData.socialLinks.x}
             className="text-base font-normal text-gray-600 dark:text-gray-300"
           >
             <svg
@@ -154,9 +135,9 @@ export default function Navbar() {
               height="16"
               fill="currentColor"
               className="bi bi-twitter h-5 w-5"
-              viewBox="0 0 16 16"
+              viewBox="0 0 300 300.251"
             >
-              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+              <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66" />
             </svg>
           </a>
           <a
@@ -174,6 +155,22 @@ export default function Navbar() {
               <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
             </svg>
           </a>
+          <a
+            href={userData.socialLinks.github}
+            className="text-base font-normal text-gray-600 dark:text-gray-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-github h-5 w-5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+            </svg>
+          </a>
+
           <button
             aria-label="Toggle Dark Mode"
             type="button"
@@ -208,30 +205,25 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-      <div className="space-x-8 block md:hidden mt-4">
+      <div className="space-x-8 text-center block md:hidden mt-4">
         <Link
-          href="/about"
+          href="/research"
           className="text-base font-normal text-gray-600 dark:text-gray-300"
         >
-          About
+          Research
         </Link>
-        <Link
-          href="/projects"
+        {/* <Link
+          href="/teaching"
           className="text-base font-normal text-gray-600 dark:text-gray-300"
         >
-          Projects
-        </Link>
+          Teaching
+        </Link> */}
         <Link
-          href="/experience"
+          href="/George_Wei.CV.pdf"
           className="text-base font-normal text-gray-600 dark:text-gray-300"
+          target="_blank"
         >
-          Experience
-        </Link>
-        <Link
-          href="/contact"
-          className="text-base font-normal text-gray-600 dark:text-gray-300"
-        >
-          Contact
+          CV
         </Link>
       </div>
     </div>
