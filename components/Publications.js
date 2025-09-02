@@ -165,7 +165,7 @@ export default function Publications({ title, pubs }) {
 
   return (
     <div className="flex flex-col md:flex-row justify-center items-start overflow-hidden">
-      <div className="w-full mx-auto text-left p-10 lg:p-20">
+      <div className="w-full mx-auto text-left">
         <h1 className="text-center text-3xl md:text-4xl font-bold text-gray-700 dark:text-gray-200 my-2">
           {title}
         </h1>
@@ -223,7 +223,7 @@ function Publication({ pub }) {
   }, [showCopyMessage]);
 
   return (
-    <div className="grid grid-cols-4 gap-4 [&:not(:last-child)]:mb-[2em]">
+    <div className="grid grid-cols-4 gap-4 mb-[2em]">
       {showCopyMessage && (
         <div
           className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-green-700 px-4 py-2 rounded z-50"

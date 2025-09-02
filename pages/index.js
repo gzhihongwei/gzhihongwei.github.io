@@ -3,13 +3,11 @@ import bibtexParse from "@orcid/bibtex-parse-js"
 
 import ContainerBlock from "../components/ContainerBlock"
 import Hero from "../components/Hero"
-import SelectedPublications from "../components/SelectedPublications"
 
 export default function Home({ pubs }) {
   return (
     <ContainerBlock>
-      <Hero />
-      <SelectedPublications pubs={pubs} />
+      <Hero pubs={pubs} />
     </ContainerBlock>
   )
 }

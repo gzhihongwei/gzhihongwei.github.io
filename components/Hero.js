@@ -1,7 +1,10 @@
 import React from "react"
 import userData from "@constants/data"
+import Education from "./Education"
+import Experience from "./Experience"
+import SelectedPublications from "./SelectedPublications"
 
-export default function Hero() {
+export default function Hero({ pubs }) {
   return (
     <div className="grid grid-cols-2 gap-2 max-w-6xl mx-auto">
       {/* Text container */}
@@ -33,7 +36,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* News contained */}
+      {/* News container */}
       <div className="order-3 col-span-2 xl:col-span-1 px-10 xl:px-0">
         <h1 className="text-center text-3xl xl:text-4xl font-bold text-gray-700 dark:text-gray-200 my-2">
           News
@@ -46,6 +49,35 @@ export default function Hero() {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+
+      {/* Selected Publications Container */}
+      <div className="order-4 col-span-2 px-10 lg:px-20">
+        <SelectedPublications pubs={pubs} />
+      </div>
+
+      {/* Education container */}
+      <div className="order-4 col-span-2 px-10 lg:px-20">
+        <h1 className="text-center text-3xl xl:text-4xl font-bold text-gray-700 dark:text-gray-200 my-2">
+          Education
+        </h1>
+        <div className="max-w-6xl mx-auto">
+          {userData.education.map((edu, idx) => (
+            <Education key={idx} edu={edu} />
+          ))}
+        </div>
+      </div>
+
+      {/* Experience container */}
+      <div className="order-5 col-span-2 px-10 lg:px-20">
+        <h1 className="text-center text-3xl xl:text-4xl font-bold text-gray-700 dark:text-gray-200 my-2">
+          Experience
+        </h1>
+        <div className="max-w-6xl mx-auto">
+          {userData.experience.map((exp, idx) => (
+            <Experience key={idx} exp={exp} />
+          ))}
         </div>
       </div>
     </div>
